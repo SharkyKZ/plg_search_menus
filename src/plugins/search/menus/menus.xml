@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="search" method="upgrade">
+	<name>plg_search_menus</name>
+	<author>SharkyKZ</author>
+	<creationDate>2020-08-26</creationDate>
+	<copyright>(C) 2020 SharkyKZ</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0.0</version>
+	<description>PLG_SEARCH_MENUS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="menus">menus.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_search_menus.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_search_menus.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="search_limit"
+					type="number"
+					label="PLG_SEARCH_MENUS_FIELD_SEARCH_LIMIT_LABEL"
+					description="PLG_SEARCH_MENUS_FIELD_SEARCH_LIMIT_DESC"
+					default="50"
+					filter="UINT"
+					min="0"
+				/>
+				<field
+					name="show_unauthorised"
+					type="radio"
+					label="PLG_SEARCH_MENUS_FIELD_SHOW_UNAUTHORISED_LABEL"
+					description="PLG_SEARCH_MENUS_FIELD_SHOW_UNAUTHORISED_DESC"
+					default="0"
+					filter="UINT"
+					validate="options"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" name="Search - Menu Items">https://raw.githubusercontent.com/SharkyKZ/plg_search_menus/master/updates/updates.xml</server>
+	</updateservers>
+</extension>
