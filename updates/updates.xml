@@ -13,6 +13,6 @@
 		</downloads>
 		<maintainer>SharkyKZ</maintainer>
 		<maintainerurl>https://github.com/SharkyKZ/plg_search_menus</maintainerurl>
-		<targetplatform name="joomla" version="3.9" />
+		<targetplatform name="joomla" version="^3\.(9|10)" />
 	</update>
 </updates>
