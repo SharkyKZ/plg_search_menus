@@ -1,7 +1,7 @@
 <?php
 /**
  * @copyright   (C) 2020 SharkyKZ
- * @license     GNU General Public License version 2 or later
+ * @license     GPL-2.0-or-later
  */
 
 defined('_JEXEC') or exit;

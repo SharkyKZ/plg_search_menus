@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.9" type="plugin" group="search" method="upgrade">
+<extension type="plugin" group="search" method="upgrade">
 	<name>plg_search_menus</name>
 	<author>SharkyKZ</author>
 	<creationDate>2020-08-26</creationDate>
 	<copyright>(C) 2020 SharkyKZ</copyright>
-	<license>GNU General Public License version 2 or later</license>
+	<license>GPL-2.0-or-later</license>
 	<version>1.0.0</version>
 	<description>PLG_SEARCH_MENUS_XML_DESCRIPTION</description>
 	<files>
