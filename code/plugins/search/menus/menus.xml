@@ -9,7 +9,9 @@
 	<description>PLG_SEARCH_MENUS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="menus">menus.php</filename>
+		<filename>install.script.php</filename>
 	</files>
+	<scriptfile>install.script.php</scriptfile>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.plg_search_menus.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_search_menus.sys.ini</language>

@@ -87,10 +87,6 @@ class PlgSearchMenus extends CMSPlugin
 		$this->loadLanguage();
 
 		$query = $this->db->getQuery(true);
-
-		$section = $this->app->getLanguage()->_('PLG_SEARCH_MENUS_MENU_ITEMS');
-		$limit   = $this->params->get('search_limit', 50);
-
 		$text = $this->db->quote('%' . $text . '%');
 
 		$query->select(
@@ -113,8 +109,12 @@ class PlgSearchMenus extends CMSPlugin
 					. 'OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('url') . ')',
 				)
 			)
-			->order($this->db->quoteName('a.title') . ' ASC')
-			->setLimit($limit);
+			->order($this->db->quoteName('a.title') . ' ASC');
+
+		if ($limit = (int) $this->params->get('search_limit', 50))
+		{
+			$query->setLimit($limit);
+		}
 
 		// Filter by access level.
 		if (!$this->params->get('show_unauthorised', 0))
@@ -142,6 +142,8 @@ class PlgSearchMenus extends CMSPlugin
 		{
 			return array();
 		}
+
+		$section = $this->app->getLanguage()->_('PLG_SEARCH_MENUS_MENU_ITEMS');
 
 		foreach ($items as $item)
 		{
