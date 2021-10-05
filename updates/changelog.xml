@@ -20,4 +20,12 @@
 			<item>Added install script with PHP and Joomla! version checks</item>
 		</addition>
 	</changelog>
+	<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.1.1</version>
+		<fix>
+			<item>Fixed expired menu items showing in Joomla 4.0</item>
+		</fix>
+	</changelog>
 </changelogs>
