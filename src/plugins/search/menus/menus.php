@@ -39,7 +39,7 @@ class PlgSearchMenus extends CMSPlugin
 	 * @var    string[]
 	 * @since  1.0.0
 	 */
-	private $searchAreas = ['menus' => 'PLG_SEARCH_MENUS_MENU_ITEMS'];
+	private $searchAreas = array('menus' => 'PLG_SEARCH_MENUS_MENU_ITEMS');
 
 	/**
 	 * Determine areas searchable by this plugin.
@@ -76,12 +76,12 @@ class PlgSearchMenus extends CMSPlugin
 
 		if ($text === '')
 		{
-			return [];
+			return array();
 		}
 
 		if (is_array($areas) && !array_intersect($areas, array_keys($this->searchAreas)))
 		{
-			return [];
+			return array();
 		}
 
 		$this->loadLanguage();
@@ -94,24 +94,24 @@ class PlgSearchMenus extends CMSPlugin
 		$text = $this->db->quote('%' . $text . '%');
 
 		$query->select(
-			[
+			array(
 				$this->db->quoteName('a.id'),
 				$this->db->quoteName('a.link'),
 				$this->db->quoteName('a.title'),
 				$this->db->quoteName('a.browserNav'),
-			]
+			)
 		)
 			->from($this->db->quoteName('#__menu', 'a'))
 			->join('LEFT', $this->db->quoteName('#__extensions', 'e') . ' ON ' . $this->db->quoteName('a.component_id') . ' = ' . $this->db->quoteName('e.extension_id'))
 			->where(
-				[
+				array(
 					$this->db->quoteName('a.published') . ' = 1',
 					$this->db->quoteName('a.client_id') . ' = 0',
 					'(' . $this->db->quoteName('a.title') . ' LIKE ' . $text . ' OR ' . $this->db->quoteName('a.alias') . ' LIKE ' . $text . ')',
 					'((' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('component') . ' AND ' . $this->db->quoteName('e.enabled') . ' = 1)'
 					. ' OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('alias')
 					. 'OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('url') . ')',
-				]
+				)
 			)
 			->order($this->db->quoteName('a.title') . ' ASC')
 			->setLimit($limit);
@@ -140,7 +140,7 @@ class PlgSearchMenus extends CMSPlugin
 		}
 		catch (RuntimeException $exception)
 		{
-			return [];
+			return array();
 		}
 
 		foreach ($items as $item)
