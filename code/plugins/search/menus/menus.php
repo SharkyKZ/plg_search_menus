@@ -111,6 +111,30 @@ class PlgSearchMenus extends CMSPlugin
 			)
 			->order($this->db->quoteName('a.title') . ' ASC');
 
+		if (version_compare(JVERSION, '4.0', '>='))
+		{
+			$currentDate = Factory::getDate()->toSql();
+
+			$query->extendWhere(
+				'AND',
+				array(
+
+					$this->db->quoteName('a.publish_up') . ' IS NULL',
+					$this->db->quoteName('a.publish_up') . ' <= ' . $this->db->quote($currentDate),
+				),
+				'OR'
+			)
+			->extendWhere(
+				'AND',
+				array(
+
+					$this->db->quoteName('a.publish_down') . ' IS NULL',
+					$this->db->quoteName('a.publish_down') . ' >= ' . $this->db->quote($currentDate),
+				),
+				'OR'
+			);
+		}
+
 		if ($limit = (int) $this->params->get('search_limit', 50))
 		{
 			$query->setLimit($limit);
