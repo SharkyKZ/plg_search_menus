@@ -42,6 +42,7 @@
 			</fieldset>
 		</fields>
 	</config>
+	<changelogurl>https://raw.githubusercontent.com/SharkyKZ/plg_search_menus/master/updates/changelog.xml</changelogurl>
 	<updateservers>
 		<server type="extension" name="Search - Menu Items">https://raw.githubusercontent.com/SharkyKZ/plg_search_menus/master/updates/updates.xml</server>
 	</updateservers>
