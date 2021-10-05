@@ -28,4 +28,12 @@
 			<item>Fixed expired menu items showing in Joomla 4.0</item>
 		</fix>
 	</changelog>
+		<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.1.2</version>
+		<fix>
+			<item>Corrected version number</item>
+		</fix>
+	</changelog>
 </changelogs>
