@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <updates>
 	<update>
 		<name>Search - Menu Items</name>
@@ -13,6 +14,6 @@
 		</downloads>
 		<maintainer>SharkyKZ</maintainer>
 		<maintainerurl>https://github.com/SharkyKZ/plg_search_menus</maintainerurl>
-		<targetplatform name="joomla" version="3.9" />
+		<targetplatform name="joomla" version="^3\.(9|10)" />
 	</update>
 </updates>
