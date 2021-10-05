@@ -8,4 +8,16 @@
 			<item>Initial release</item>
 		</note>
 	</changelog>
+	<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.1.0</version>
+		<change>
+			<item>Reduced PHP requirement from 5.4 to 5.3.10</item>
+			<item>Declared Joomla! 4.0 compatibility</item>
+		</change>
+		<addition>
+			<item>Added install script with PHP and Joomla! version checks</item>
+		</addition>
+	</changelog>
 </changelogs>
