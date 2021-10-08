@@ -84,10 +84,7 @@ class PlgSearchMenus extends CMSPlugin
 			return array();
 		}
 
-		$this->loadLanguage();
-
 		$query = $this->db->getQuery(true);
-		$text = $this->db->quote('%' . $text . '%');
 
 		$query->select(
 			array(
@@ -103,13 +100,42 @@ class PlgSearchMenus extends CMSPlugin
 				array(
 					$this->db->quoteName('a.published') . ' = 1',
 					$this->db->quoteName('a.client_id') . ' = 0',
-					'(' . $this->db->quoteName('a.title') . ' LIKE ' . $text . ' OR ' . $this->db->quoteName('a.alias') . ' LIKE ' . $text . ')',
 					'((' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('component') . ' AND ' . $this->db->quoteName('e.enabled') . ' = 1)'
 					. ' OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('alias')
-					. 'OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('url') . ')',
+					. ' OR ' . $this->db->quoteName('a.type') . ' = ' . $this->db->quote('url') . ')',
 				)
 			)
 			->order($this->db->quoteName('a.title') . ' ASC');
+
+		if ($phrase === 'exact')
+		{
+			$text = $this->db->quote('%' . $text . '%');
+			$query->extendWhere(
+				'AND',
+				array(
+					$this->db->quoteName('a.title') . ' LIKE ' . $text,
+					$this->db->quoteName('a.alias') . ' LIKE ' . $text,
+				),
+				'OR'
+			);
+		}
+		else
+		{
+			$where = array();
+			$text = preg_split('/\s/', $text);
+
+			foreach ($text as $word)
+			{
+				$word = $this->db->quote('%' . $word . '%');
+				$where[] = '(' . $this->db->quoteName('a.title') . ' LIKE '  . $word . ' OR ' . $this->db->quoteName('a.alias') . ' LIKE ' . $word . ')';
+			}
+
+			$query->extendWhere(
+				'AND',
+				$where,
+				$phrase === 'all' ? 'AND' : 'OR'
+			);
+		}
 
 		if (version_compare(JVERSION, '4.0', '>='))
 		{
@@ -167,6 +193,7 @@ class PlgSearchMenus extends CMSPlugin
 			return array();
 		}
 
+		$this->loadLanguage();
 		$section = $this->app->getLanguage()->_('PLG_SEARCH_MENUS_MENU_ITEMS');
 
 		foreach ($items as $item)
