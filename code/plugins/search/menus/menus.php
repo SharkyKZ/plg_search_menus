@@ -8,7 +8,6 @@ defined('_JEXEC') or exit;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\CMS\Router\Route;
 
 /**
  * Plugin for searching menu items in frontend.
@@ -198,7 +197,7 @@ class PlgSearchMenus extends CMSPlugin
 
 		foreach ($items as $item)
 		{
-			$item->href = Route::_($item->link);
+			$item->href = $item->link;
 			$item->browsernav = $item->browserNav;
 			$item->section = $section;
 			$item->created = '';
