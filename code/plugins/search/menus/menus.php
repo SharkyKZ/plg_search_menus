@@ -87,10 +87,9 @@ class PlgSearchMenus extends CMSPlugin
 
 		$query->select(
 			array(
-				$this->db->quoteName('a.id'),
-				$this->db->quoteName('a.link'),
+				$this->db->quoteName('a.link', 'href'),
 				$this->db->quoteName('a.title'),
-				$this->db->quoteName('a.browserNav'),
+				$this->db->quoteName('a.browserNav', 'browsernav'),
 			)
 		)
 			->from($this->db->quoteName('#__menu', 'a'))
@@ -197,8 +196,6 @@ class PlgSearchMenus extends CMSPlugin
 
 		foreach ($items as $item)
 		{
-			$item->href = $item->link;
-			$item->browsernav = $item->browserNav;
 			$item->section = $section;
 			$item->created = '';
 			$item->text = '';
