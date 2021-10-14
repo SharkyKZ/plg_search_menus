@@ -28,12 +28,26 @@
 			<item>Fixed expired menu items showing in Joomla 4.0</item>
 		</fix>
 	</changelog>
-		<changelog>
+	<changelog>
 		<element>menus</element>
 		<type>plugin</type>
 		<version>1.1.2</version>
 		<fix>
 			<item>Corrected version number</item>
 		</fix>
+	</changelog>
+	<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.2.0</version>
+		<addition>
+			<item>Added different matching types (any/all words or exact phrase)</item>
+		</addition>
+		<fix>
+			<item>Fixed uninstallation on Joomla! 4.0+ and unsupported PHP versions</item>
+		</fix>
+		<change>
+			<item>Minor optimizations</item>
+		</change>
 	</changelog>
 </changelogs>
