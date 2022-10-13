@@ -44,7 +44,7 @@ final class PlgSearchMenusInstallerScript
 	 * @var    string
 	 * @since  1.1.0
 	 */
-	private $phpUnsupported = '8.1';
+	private $phpUnsupported = '8.3';
 
 	/**
 	 * Function called before extension installation/update/removal procedure commences.
