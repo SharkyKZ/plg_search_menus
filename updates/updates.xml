@@ -89,4 +89,25 @@
 		<targetplatform name="joomla" version="(4|3\.([89]|10))"/>
 		<php_minimum>5.3.10</php_minimum>
 	</update>
+	<update>
+		<name>Search - Menu Items</name>
+		<description>Plugin for searching menu items in frontend.</description>
+		<element>menus</element>
+		<type>plugin</type>
+		<folder>search</folder>
+		<client>site</client>
+		<maintainer>SharkyKZ</maintainer>
+		<maintainerurl>https://github.com/SharkyKZ/plg_search_menus</maintainerurl>
+		<version>1.2.1</version>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/SharkyKZ/plg_search_menus/releases/download/1.2.1/plg_search_menus-1.2.1.zip</downloadurl>
+		</downloads>
+		<sha512>0711a256555df7d8adccaca51c87f82b241760125e7d97b4e4737383196aa36ae251d292d15e9ed570f449e69582077cd370dd5ca95017d4b9fabc4e6ee3d30f</sha512>
+		<sha384>07ed37dc71f1b998def009f17a65a98e8142571c64221cd07c748a63179b51180765c573d1f5b05b51073b84f65abe67</sha384>
+		<sha256>c6a3c8fcd665862920f6deda0b437504b87837503d4255a16370342e7c687e17</sha256>
+		<infourl title="Search - Menu Items">https://github.com/SharkyKZ/plg_search_menus/releases/tag/1.2.1</infourl>
+		<changelogurl>https://raw.githubusercontent.com/SharkyKZ/plg_search_menus/master/updates/changelog.xml</changelogurl>
+		<targetplatform name="joomla" version="(4\.|3\.([89]|10))"/>
+		<php_minimum>5.3.10</php_minimum>
+	</update>
 </updates>
