@@ -28,7 +28,7 @@ final class PlgSearchMenusInstallerScript
 	 * @var    string
 	 * @since  1.1.0
 	 */
-	private $joomlaUnsupported = '5.0';
+	private $joomlaUnsupported = '6.0';
 
 	/**
 	 * Minimum supported PHP version.
@@ -44,7 +44,7 @@ final class PlgSearchMenusInstallerScript
 	 * @var    string
 	 * @since  1.1.0
 	 */
-	private $phpUnsupported = '8.3';
+	private $phpUnsupported = '8.4';
 
 	/**
 	 * Function called before extension installation/update/removal procedure commences.
