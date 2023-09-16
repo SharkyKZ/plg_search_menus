@@ -58,4 +58,13 @@
 			<item>Declared PHP 8.2 compatibility</item>
 		</change>
 	</changelog>
+	<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.2.2</version>
+		<change>
+			<item>Declared PHP 8.3 support</item>
+			<item>Declared Joomla! 5.0 support</item>
+		</change>
+	</changelog>
 </changelogs>
