@@ -15,7 +15,7 @@ require __DIR__ . '/vendor/autoload.php';
 		'Search - Menu Items',
 		'Plugin for searching menu items in frontend.',
 		'(5\.|4\.|3\.([89]|10))',
-		'5.3.10',
+		'5.4',
 		$argv[1] ?? null,
 	)
 )->build();
