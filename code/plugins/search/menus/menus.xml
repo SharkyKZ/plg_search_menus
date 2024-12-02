@@ -2,10 +2,10 @@
 <extension type="plugin" group="search" method="upgrade">
 	<name>plg_search_menus</name>
 	<author>SharkyKZ</author>
-	<creationDate>2020-08-26</creationDate>
+	<creationDate>2024-12-02</creationDate>
 	<copyright>(C) 2020 SharkyKZ</copyright>
 	<license>GPL-2.0-or-later</license>
-	<version>1.2.2</version>
+	<version>1.2.3</version>
 	<description>PLG_SEARCH_MENUS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="menus">menus.php</filename>

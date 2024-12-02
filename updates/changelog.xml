@@ -67,4 +67,9 @@
 			<item>Declared Joomla! 5.0 support</item>
 		</change>
 	</changelog>
+	<changelog>
+		<element>menus</element>
+		<type>plugin</type>
+		<version>1.2.3</version>
+	</changelog>
 </changelogs>
